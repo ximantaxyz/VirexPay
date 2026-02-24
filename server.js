@@ -75,6 +75,30 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/verify', (req, res) => {
+    const { uid } = req.query;
+    const filePath = path.join(__dirname, 'verify.html');
+    
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).send('Internal server error');
+        }
+        
+        let html = data;
+        if (uid && /^\d+$/.test(uid)) {
+            const metaTag = `<meta name="user-id" content="${uid}">`;
+            html = data.replace('<head>', `<head>\n    ${metaTag}`);
+        }
+        
+        res.send(html);
+    });
+});
+
+app.get('/terms', (req, res) => {
+    const filePath = path.join(__dirname, 'terms.html');
+    res.sendFile(filePath);
+});
+
 app.post('/verify', async (req, res) => {
     try {
         const { token, userId } = req.body;
