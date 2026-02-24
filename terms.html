@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Virex Pay Gateway · Terms & Conditions</title>
+    <!-- refined font stack: EB Garamond for body, Cormorant Garamond for first-line emphasis, Playfair + Cinzel + Baskerville retained, IBM Plex Mono, Inter, Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:wght@400;700&family=Cinzel:wght@400;500&family=EB+Garamond:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Merriweather:ital@1&family=IBM+Plex+Mono&family=Inter:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #efe6d1;  /* refined parchment */
+            background-image: linear-gradient(to bottom, #f5efdf, #eae1cc); /* extremely subtle gradient */
+            font-family: 'EB Garamond', Georgia, serif;   /* body base: EB Garamond, authoritative */
+            color: #1e1c18;
+            line-height: 1.8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            margin: 0;
+            font-size: 1.05rem;  /* slightly larger for readability */
+        }
+
+        .document-container {
+            max-width: 820px;      /* refined max width */
+            width: 100%;
+            background: transparent;  /* let body gradient show through */
+            padding: 20px 0 20px;
+        }
+
+        .lock-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .lock-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #4b3f2e;
+            stroke-width: 1.4;
+            fill: none;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 6px;
+            color: #1e1a12;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-align: center;
+            color: #4b3f2e;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .thin-rule {
+            border: none;
+            border-top: 1px solid #b7aa93;
+            width: 60px;
+            margin: 24px auto 32px;
+        }
+
+        /* version block – more official, narrow, centered */
+        .version-block {
+            font-family: 'IBM Plex Mono', monospace;
+            background: #e3dacb;
+            padding: 14px 20px;
+            margin: 20px auto 40px auto;
+            font-size: 0.85rem;
+            border-left: 6px solid #3f3527;
+            color: #2b251e;
+            max-width: 520px;
+            text-align: center;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
+
+        /* terms content – EB Garamond base, authoritative */
+        .terms-content {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.05rem;
+            color: #1e1c18;
+        }
+
+        /* first sentence of each paragraph – subtle Cormorant Garamond italic emphasis */
+        .terms-content p::first-line {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            font-style: italic;
+            color: #2b241b;
+        }
+
+        /* but keep lists normal (no first-line distortion) */
+        .terms-content li::first-line {
+            font-family: 'EB Garamond', serif;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        /* section heading styling with decorative number */
+        .terms-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 64px 0 18px 0;
+            font-weight: 500;
+            border-bottom: 1px solid #b7aa93;
+            padding-bottom: 8px;
+            position: relative;
+        }
+
+        /* decorative large faint number before heading (pseudo-element) */
+        .terms-content h2::before {
+            content: attr(data-number);
+            font-family: 'Libre Baskerville', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #d6cdbb;
+            position: absolute;
+            left: -36px;
+            top: -20px;
+            z-index: -1;
+            letter-spacing: -2px;
+        }
+
+        /* left vertical rule for section blocks */
+        .terms-content h2,
+        .terms-content p,
+        .terms-content ul,
+        .terms-content h3 {
+            border-left: 1px solid #d6cdbb;
+            padding-left: 22px;
+            margin-left: 8px;
+        }
+
+        .terms-content h3 {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            margin: 36px 0 12px 0;
+            font-weight: 400;
+            color: #2e271f;
+            letter-spacing: 0.5px;
+            border-left: 1px solid #d6cdbb;
+            padding-left: 22px;
+        }
+
+        .terms-content p {
+            margin: 24px 0;
+            line-height: 1.85;
+        }
+
+        .terms-content ul {
+            margin: 18px 0 28px 30px;
+            list-style-type: disc;
+        }
+
+        .terms-content li {
+            margin: 8px 0;
+            line-height: 1.8;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .terms-content strong {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            color: #1e1a12;
+            letter-spacing: 0.3px;
+        }
+
+        /* legal emphasis: indented, letter-spaced, subtle background */
+        .terms-content .legal-emphasis {
+            font-style: italic;
+            letter-spacing: 0.8px;
+            background: #e3dacb;
+            padding: 4px 12px;
+            margin-left: 32px;
+            border-left: 3px solid #7f6e58;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.98rem;
+            display: inline-block;
+            width: auto;
+        }
+
+        .metadata {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: #6b5e4c;
+            margin: 30px 0 20px;
+            border-left: 1px solid #d6cdbb;
+            padding-left: 22px;
+        }
+
+        /* language selector – sharp rectangles, improved contrast */
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin: 50px 0 24px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1.5px solid #4b3f2e;
+            color: #2b251e;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 10px 28px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 0;
+            font-weight: 500;
+            background: rgba(239, 230, 209, 0.3);
+        }
+
+        .lang-btn:hover {
+            background: #2b251e;
+            color: #efe6d1;
+            border-color: #2b251e;
+        }
+
+        .lang-btn.active {
+            background: #2b251e;
+            color: #efe6d1;
+            border: 2px solid #1e1a12;
+            font-weight: 600;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .return-btn {
+            background: transparent;
+            border: 2px solid #1e1a12;
+            color: #1e1a12;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            padding: 14px 42px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin: 10px auto 30px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: #efe6d1;
+        }
+
+        .return-btn:hover {
+            background: #1e1a12;
+            color: #efe6d1;
+            border-color: #1e1a12;
+        }
+
+        .footer-text {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #5f5543;
+            margin-top: 50px;
+            border-top: 1px solid #b7aa93;
+            padding-top: 24px;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+        }
+
+        /* additional spacing improvements */
+        .terms-content {
+            margin-top: 10px;
+        }
+
+        /* increase vertical whitespace between sections */
+        .terms-content h2:not(:first-of-type) {
+            margin-top: 72px;
+        }
+
+        /* for the first h2, no huge gap */
+        .terms-content h2:first-of-type {
+            margin-top: 30px;
+        }
+
+        /* data-number attribute must be added via script to preserve exact content, but we set manually in HTML via data-number */
+        /* we'll insert numbers in the content blocks manually in the HTML part (below) to keep them static */
+
+        @media (max-width: 600px) {
+            body { padding: 24px 16px; }
+            .main-title { font-size: 2.2rem; }
+            .subtitle { font-size: 0.7rem; letter-spacing: 3px; }
+            .terms-content h2 { font-size: 1.2rem; }
+            .terms-content h2::before { left: -20px; font-size: 2.8rem; }
+            .terms-content h2, .terms-content p, .terms-content ul { padding-left: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="document-container">
+        <div class="lock-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="10" width="16" height="12" rx="2" ry="2"></rect>
+                <path d="M8 10V6a4 4 0 0 1 8 0v4"></path>
+            </svg>
+        </div>
+
+        <h1 class="main-title">Virex Pay Gateway</h1>
+        <div class="subtitle">Terms & Conditions</div>
+
+        <!-- Russian content block with data-number attributes for decorative section numbers -->
+        <div id="content-ru" class="language-content terms-content">
+            <div class="version-block">
+                <strong>Версия V8.2.9.0</strong><br>
+                Последнее обновление: Февраль 2026
+            </div>
+
+            <h2 data-number="1">1. Введение</h2>
+            <p>Настоящие Условия и положения регулируют использование Virex Pay Gateway, управляемого My Business Analyzer (Somshúz Rotrën).</p>
+            <p>Получая доступ или используя Virex Pay Gateway, вы соглашаетесь соблюдать данные Условия и быть ими связанными.</p>
+            <p>Если вы не согласны с настоящими Условиями, вы не должны использовать данный сервис.</p>
+
+            <h2 data-number="2">2. Характер сервиса</h2>
+            <p>Virex Pay Gateway представляет собой интерфейс обработки платежей, предназначенный для приема добровольных платежей, связанных с цифровыми услугами.</p>
+            <p>Virex Pay Gateway не является банком, финансовым учреждением или лицензированной инвестиционной организацией.</p>
+            <p>Мы не предоставляем финансовых гарантий, доходности или обещаний прибыли любого рода.</p>
+            <p>Все услуги предоставляются вручную после подтверждения оплаты.</p>
+            <p>Мы не храним данные банковских карт или конфиденциальные финансовые реквизиты.</p>
+
+            <h2 data-number="3">3. Платежи</h2>
+            <p>Все платежи, отправленные через систему, считаются окончательными.</p>
+            <p>Возврат средств не осуществляется ни при каких обстоятельствах после отправки платежа.</p>
+            <p>Пользователь подтверждает, что любое добровольное решение о платеже или участии принимается исключительно по его собственному усмотрению и ответственности.</p>
+            <p>Мы оставляем за собой право блокировать пользователей по своему усмотрению.</p>
+
+            <h2 data-number="4">4. Проверка транзакций и противодействие мошенничеству</h2>
+            <p>Все платежи проходят ручную проверку.</p>
+            <p>Мы оставляем за собой право предпринимать действия в случаях:</p>
+            <ul>
+                <li>Мошеннического поведения</li>
+                <li>Подозрительной транзакционной активности</li>
+                <li>Несанкционированных попыток оплаты</li>
+                <li>Злоупотребления ботами или автоматизированными системами</li>
+                <li>Попыток чарджбека</li>
+                <li>Отмывания денежных средств</li>
+                <li>Незаконной финансовой деятельности</li>
+            </ul>
+            <p>Пользователи, нарушающие данные правила, могут быть заблокированы без предварительного уведомления.</p>
+
+            <h2 data-number="5">5. Верификация и безопасность</h2>
+            <p>Virex Pay Gateway может использовать сторонние сервисы проверки, включая Google reCAPTCHA, для повышения безопасности.</p>
+            <p>Статус верификации может быть отозван в любое время по нашему усмотрению.</p>
+            <p>Мы фиксируем время прохождения проверки и базовые технические данные в целях безопасности и эксплуатации.</p>
+
+            <h2 data-number="6">6. Данные и конфиденциальность</h2>
+            <p>Мы храним ограниченные операционные данные, включая:</p>
+            <ul>
+                <li>Telegram ID пользователя</li>
+                <li>Имя пользователя (если предоставлено)</li>
+                <li>Идентификаторы транзакций</li>
+                <li>Статус платежей</li>
+                <li>Временные отметки верификации</li>
+            </ul>
+            <p>Мы не храним данные банковских карт.</p>
+            <p>Мы не продаем пользовательские данные.</p>
+            <p>Мы не передаем пользовательские данные третьим лицам, за исключением случаев, предусмотренных законодательством или необходимостью обеспечения безопасности инфраструктуры (например, reCAPTCHA).</p>
+            <p>Операционные журналы могут храниться бессрочно в целях безопасности и предотвращения мошенничества.</p>
+            <p class="legal-emphasis">Мы не гарантируем удаление данных по запросу пользователя.</p>
+
+            <h2 data-number="7">7. Ограничение ответственности</h2>
+            <p>Использование Virex Pay Gateway осуществляется на ваш собственный риск.</p>
+            <p>Мы не несем ответственности за:</p>
+            <ul>
+                <li>Потерю средств по вине пользователя</li>
+                <li>Неверно отправленные платежи</li>
+                <li>Проблемы сторонних платежных систем</li>
+                <li>Результаты добровольного участия</li>
+                <li>Любые косвенные или последующие убытки</li>
+            </ul>
+            <p>Пользователь принимает на себя полную ответственность за свои финансовые решения.</p>
+
+            <h2 data-number="8">8. Запрещенное использование</h2>
+            <p>Пользователь обязуется не:</p>
+            <ul>
+                <li>Осуществлять незаконные транзакции</li>
+                <li>Участвовать в отмывании денежных средств</li>
+                <li>Отправлять мошеннические платежи</li>
+                <li>Злоупотреблять системой верификации</li>
+                <li>Использовать автоматизацию или ботов для эксплуатации сервиса</li>
+                <li>Перепродавать доступ или неправомерно использовать функциональность системы</li>
+            </ul>
+            <p>Нарушение может привести к постоянному ограничению доступа к сервису.</p>
+
+            <h2 data-number="9">9. Изменения условий</h2>
+            <p>Мы оставляем за собой право изменять настоящие Условия в любое время.</p>
+            <p>Обновленные Условия вступают в силу немедленно после публикации.</p>
+            <p>Продолжение использования сервиса означает принятие обновленных Условий.</p>
+
+            <h2 data-number="10">10. Принятие условий</h2>
+            <p>Нажимая кнопку «Я согласен» в интерфейсе Virex Pay Gateway, вы подтверждаете, что:</p>
+            <ul>
+                <li>Вы прочитали данные Условия</li>
+                <li>Вы понимаете данные Условия</li>
+                <li>Вы принимаете данные Условия</li>
+                <li>Вы соглашаетесь соблюдать данные Условия</li>
+            </ul>
+            <div class="metadata">Конец документа · Версия 1.0</div>
+        </div>
+
+        <div id="content-en" class="language-content terms-content">
+            <div class="version-block">
+                <strong>Version V8.2.9.0</strong><br>
+                Last Updated: February 2026
+            </div>
+
+            <h2 data-number="1">1. Introduction</h2>
+            <p>These Terms & Conditions govern the use of Virex Pay Gateway, operated by My Business Analyzer (Somshúz Rotrën).</p>
+            <p>By accessing or using Virex Pay Gateway, you agree to comply with and be bound by these Terms.</p>
+            <p>If you do not agree with these Terms, you must not use this service.</p>
+
+            <h2 data-number="2">2. Nature of Service</h2>
+            <p>Virex Pay Gateway is a payment facilitation interface designed for processing voluntary payments related to digital services.</p>
+            <p>Virex Pay Gateway is not a bank, financial institution, or licensed investment entity.</p>
+            <p>We do not provide financial guarantees, returns, or profit assurances of any kind.</p>
+            <p>All services are manually fulfilled after payment confirmation.</p>
+            <p>We do not store card information or sensitive financial credentials.</p>
+
+            <h2 data-number="3">3. Payments</h2>
+            <p>All payments submitted through the system are considered final.</p>
+            <p>There are no refunds under any circumstances once payment has been submitted.</p>
+            <p>Users acknowledge that any voluntary payment or participation decision is made at their own discretion and responsibility.</p>
+            <p>We reserve the right to block users at our sole discretion.</p>
+
+            <h2 data-number="4">4. Transaction Review & Anti-Fraud</h2>
+            <p>All payments are manually reviewed.</p>
+            <p>We reserve the right to take action in cases involving:</p>
+            <ul>
+                <li>Fraudulent behavior</li>
+                <li>Suspicious transaction activity</li>
+                <li>Unauthorized payment attempts</li>
+                <li>Bot abuse or automation abuse</li>
+                <li>Chargeback attempts</li>
+                <li>Money laundering activity</li>
+                <li>Illegal financial conduct</li>
+            </ul>
+            <p>Users engaging in prohibited activities may be permanently blocked without notice.</p>
+
+            <h2 data-number="5">5. Verification & Security</h2>
+            <p>Virex Pay Gateway may utilize third-party verification services including Google reCAPTCHA to enhance security.</p>
+            <p>Verification status may be revoked at any time at our discretion.</p>
+            <p>We log verification timestamps and basic metadata for security and operational purposes.</p>
+
+            <h2 data-number="6">6. Data & Privacy</h2>
+            <p>We store limited operational data including:</p>
+            <ul>
+                <li>Telegram User ID</li>
+                <li>Username (if provided)</li>
+                <li>Transaction IDs</li>
+                <li>Payment status records</li>
+                <li>Verification timestamps</li>
+            </ul>
+            <p>We do not store card information.</p>
+            <p>We do not sell user data.</p>
+            <p>We do not share user data with third parties, except where required by law or for security infrastructure (e.g., reCAPTCHA).</p>
+            <p>Operational logs may be retained indefinitely for security and fraud prevention.</p>
+            <p class="legal-emphasis">We do not guarantee data deletion upon request.</p>
+
+            <h2 data-number="7">7. Limitation of Liability</h2>
+            <p>Use of Virex Pay Gateway is at your own risk.</p>
+            <p>We are not responsible for:</p>
+            <ul>
+                <li>Loss of funds due to user error</li>
+                <li>Incorrect payment submissions</li>
+                <li>Third-party payment system issues</li>
+                <li>Voluntary participation outcomes</li>
+                <li>Any indirect or consequential damages</li>
+            </ul>
+            <p>Users accept full responsibility for their financial decisions.</p>
+
+            <h2 data-number="8">8. Prohibited Use</h2>
+            <p>Users agree not to:</p>
+            <ul>
+                <li>Engage in illegal transactions</li>
+                <li>Attempt money laundering</li>
+                <li>Submit fraudulent payments</li>
+                <li>Abuse the verification system</li>
+                <li>Use automation or bots to exploit the service</li>
+                <li>Resell access or misuse system functionality</li>
+            </ul>
+            <p>Violation may result in permanent service restriction.</p>
+
+            <h2 data-number="9">9. Modifications to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time.</p>
+            <p>Updated Terms become effective immediately upon publication.</p>
+            <p>Continued use of the service constitutes acceptance of the revised Terms.</p>
+
+            <h2 data-number="10">10. Acceptance</h2>
+            <p>By selecting "I Agree" within the Virex Pay Gateway interface, you confirm that:</p>
+            <ul>
+                <li>You have read these Terms</li>
+                <li>You understand these Terms</li>
+                <li>You accept these Terms</li>
+                <li>You agree to be bound by these Terms</li>
+            </ul>
+            <div class="metadata">End of Document · Version 1.0</div>
+        </div>
+
+        <div id="content-es" class="language-content terms-content">
+            <div class="version-block">
+                <strong>Versión V8.2.9.0</strong><br>
+                Última actualización: Febrero 2026
+            </div>
+
+            <h2 data-number="1">1. Introducción</h2>
+            <p>Estos Términos y Condiciones regulan el uso de Virex Pay Gateway, operado por My Business Analyzer (Somshúz Rotrën).</p>
+            <p>Al acceder o utilizar Virex Pay Gateway, usted acepta cumplir y quedar obligado por estos Términos.</p>
+            <p>Si no está de acuerdo con estos Términos, no debe utilizar este servicio.</p>
+
+            <h2 data-number="2">2. Naturaleza del Servicio</h2>
+            <p>Virex Pay Gateway es una interfaz de facilitación de pagos diseñada para procesar pagos voluntarios relacionados con servicios digitales.</p>
+            <p>Virex Pay Gateway no es un banco, institución financiera ni entidad de inversión autorizada.</p>
+            <p>No proporcionamos garantías financieras, rendimientos ni promesas de beneficios de ningún tipo.</p>
+            <p>Todos los servicios se entregan manualmente después de la confirmación del pago.</p>
+            <p>No almacenamos información de tarjetas ni credenciales financieras sensibles.</p>
+
+            <h2 data-number="3">3. Pagos</h2>
+            <p>Todos los pagos enviados a través del sistema se consideran definitivos.</p>
+            <p>No se realizan reembolsos bajo ninguna circunstancia una vez que el pago ha sido enviado.</p>
+            <p>El usuario reconoce que cualquier decisión voluntaria de pago o participación se realiza bajo su propia discreción y responsabilidad.</p>
+            <p>Nos reservamos el derecho de bloquear usuarios a nuestra entera discreción.</p>
+
+            <h2 data-number="4">4. Revisión de Transacciones y Prevención de Fraude</h2>
+            <p>Todos los pagos son revisados manualmente.</p>
+            <p>Nos reservamos el derecho de tomar medidas en casos que involucren:</p>
+            <ul>
+                <li>Comportamiento fraudulento</li>
+                <li>Actividad de transacción sospechosa</li>
+                <li>Intentos de pago no autorizados</li>
+                <li>Abuso mediante bots o automatización</li>
+                <li>Intentos de contracargo</li>
+                <li>Lavado de dinero</li>
+                <li>Conducta financiera ilegal</li>
+            </ul>
+            <p>Los usuarios que participen en actividades prohibidas podrán ser bloqueados permanentemente sin previo aviso.</p>
+
+            <h2 data-number="5">5. Verificación y Seguridad</h2>
+            <p>Virex Pay Gateway puede utilizar servicios de verificación de terceros, incluyendo Google reCAPTCHA, para mejorar la seguridad.</p>
+            <p>El estado de verificación puede ser revocado en cualquier momento a nuestra discreción.</p>
+            <p>Registramos marcas de tiempo de verificación y metadatos básicos con fines de seguridad y operación.</p>
+
+            <h2 data-number="6">6. Datos y Privacidad</h2>
+            <p>Almacenamos datos operativos limitados, incluyendo:</p>
+            <ul>
+                <li>ID de usuario de Telegram</li>
+                <li>Nombre de usuario (si se proporciona)</li>
+                <li>Identificadores de transacciones</li>
+                <li>Registros de estado de pago</li>
+                <li>Marcas de tiempo de verificación</li>
+            </ul>
+            <p>No almacenamos información de tarjetas.</p>
+            <p>No vendemos datos de usuarios.</p>
+            <p>No compartimos datos de usuarios con terceros, excepto cuando sea requerido por la ley o necesario para infraestructura de seguridad (por ejemplo, reCAPTCHA).</p>
+            <p>Los registros operativos pueden conservarse indefinidamente con fines de seguridad y prevención de fraude.</p>
+            <p class="legal-emphasis">No garantizamos la eliminación de datos a solicitud del usuario.</p>
+
+            <h2 data-number="7">7. Limitación de Responsabilidad</h2>
+            <p>El uso de Virex Pay Gateway es bajo su propio riesgo.</p>
+            <p>No somos responsables de:</p>
+            <ul>
+                <li>Pérdida de fondos debido a errores del usuario</li>
+                <li>Envíos de pago incorrectos</li>
+                <li>Problemas con sistemas de pago de terceros</li>
+                <li>Resultados de participación voluntaria</li>
+                <li>Cualquier daño indirecto o consecuente</li>
+            </ul>
+            <p>Los usuarios aceptan plena responsabilidad por sus decisiones financieras.</p>
+
+            <h2 data-number="8">8. Uso Prohibido</h2>
+            <p>El usuario se compromete a no:</p>
+            <ul>
+                <li>Realizar transacciones ilegales</li>
+                <li>Participar en lavado de dinero</li>
+                <li>Enviar pagos fraudulentos</li>
+                <li>Abusar del sistema de verificación</li>
+                <li>Utilizar automatización o bots para explotar el servicio</li>
+                <li>Revender el acceso o hacer uso indebido de la funcionalidad del sistema</li>
+            </ul>
+            <p>La violación puede resultar en la restricción permanente del servicio.</p>
+
+            <h2 data-number="9">9. Modificaciones de los Términos</h2>
+            <p>Nos reservamos el derecho de modificar estos Términos en cualquier momento.</p>
+            <p>Los Términos actualizados entran en vigor inmediatamente tras su publicación.</p>
+            <p>El uso continuado del servicio constituye la aceptación de los Términos revisados.</p>
+
+            <h2 data-number="10">10. Aceptación</h2>
+            <p>Al seleccionar "Acepto" dentro de la interfaz de Virex Pay Gateway, usted confirma que:</p>
+            <ul>
+                <li>Ha leído estos Términos</li>
+                <li>Entiende estos Términos</li>
+                <li>Acepta estos Términos</li>
+                <li>Se compromete a cumplir estos Términos</li>
+            </ul>
+            <div class="metadata">Fin del documento · Versión 1.0</div>
+        </div>
+
+        <hr class="thin-rule">
+
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+            <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+        </div>
+
+        <div class="button-container">
+            <button class="return-btn" onclick="window.location.href='https://t.me/VirexPay_Bot'">⬅ Return to Bot</button>
+        </div>
+
+        <div class="footer-text">
+            © 2026 My Business Analyzer (Somshúz Rotrën) · All rights reserved<br>
+            Virex Pay Gateway Version V8.2.9.0 · February 2026
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const contents = {
+                ru: document.getElementById('content-ru'),
+                en: document.getElementById('content-en'),
+                es: document.getElementById('content-es')
+            };
+
+            const buttons = document.querySelectorAll('.lang-btn');
+            
+            function setLanguage(lang) {
+                if (!contents[lang]) return;
+
+                Object.values(contents).forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                contents[lang].classList.add('active');
+
+                buttons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.lang === lang) {
+                        btn.classList.add('active');
+                    }
+                });
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            function detectLanguage() {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang.startsWith('ru')) {
+                    return 'ru';
+                } else if (browserLang.startsWith('es')) {
+                    return 'es';
+                }
+                return 'ru';
+            }
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.dataset.lang;
+                    setLanguage(lang);
+                });
+            });
+
+            const initialLang = detectLanguage();
+            setLanguage(initialLang);
+        })();
+    </script>
+</body>
+</html>
