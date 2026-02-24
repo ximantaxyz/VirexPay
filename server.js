@@ -165,6 +165,10 @@ app.get('/check', (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.redirect('/verify');
+});
+
 app.use((req, res) => {
     res.status(404).json({ error: 'Not found' });
 });
